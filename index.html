@@ -3,12 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión Universidad de Nariño</title>
+    <title>SmartFinances - Gestión Financiera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f7;
+            color: #333;
+        }
+        header {
+            background: #004d99;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        header img {
+            width: 80px;
+            height: auto;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            background: #00264d;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background: #003366;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #004d99;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #003366;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #00264d;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
     <script>
         function registrarUsuario() {
             var usuario = document.getElementById("usuario").value;
             var contraseña = document.getElementById("contraseña").value;
-            
             if (usuario && contraseña) {
                 alert("Usuario registrado: " + usuario);
             } else {
@@ -16,75 +99,57 @@
             }
         }
     </script>
-    <style>
-        #registro-container {
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            margin: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <img src="Imagenes/Logo.jpeg" alt="Logo Universidad de Nariño" width="100">
+        <img src="Imagenes/Logo.jpeg" alt="Logo Universidad de Nariño">
         <h1>SmartFinances</h1>
-        <p>Menú principal</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#inicio">Login</a></li>
-            <li><a href="#estudiantes">Registro</a></li>
+            <li><a href="#registro">Registro</a></li>
+            <li><a href="#ingresos">Ingresos</a></li>
+            <li><a href="#egresos">Egresos</a></li>
+            <li><a href="#reportes">Reportes</a></li>
         </ul>
     </nav>
 
     <main>
-        <section id="inicio" class="animated-section">
-            <h2>Bienvenido</h2>
-            <p>Gestiona tus ingresos y gastos fácilmente con SmartFinance.</p>
-            <div class="imagenes-container">
-                <img src="imagenes/ingresos.png" alt="Registro de Ingresos" class="fade-in">
-                <img src="imagenes/egresos.png" alt="Registro de Egresos" class="fade-in">
-            </div>
-        </section>
-
-        <div id="registro-container">
+        <section id="registro" class="section-container">
             <h2>Registrar Usuario</h2>
             <form onsubmit="event.preventDefault(); registrarUsuario();">
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required><br><br>
+                <input type="text" id="usuario" name="usuario" required>
                 <label for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" required><br><br>
+                <input type="password" id="contraseña" name="contraseña" required>
                 <button type="submit">Registrar</button>
             </form>
-        </div>
+        </section>
 
-        <section id="ingresos" class="interactive-section slide-in">
+        <section id="ingresos" class="section-container">
             <h2>Ingresos</h2>
             <form id="form-ingresos">
                 <label for="monto-ingreso">Monto:</label>
-                <input type="number" id="monto-ingreso" name="monto-ingreso" placeholder="Ingrese el monto" required><br><br>
+                <input type="number" id="monto-ingreso" name="monto-ingreso" required>
                 <label for="categoria-ingreso">Categoría:</label>
-                <input type="text" id="categoria-ingreso" name="categoria-ingreso" placeholder="Ingrese la categoría" required><br><br>
-                <button type="submit" class="btn-animado">Agregar Ingreso</button>
+                <input type="text" id="categoria-ingreso" name="categoria-ingreso" required>
+                <button type="submit">Agregar Ingreso</button>
             </form>
-            <ul id="lista-ingresos" class="lista-animada"></ul>
         </section>
 
-        <section id="egresos" class="interactive-section slide-in">
+        <section id="egresos" class="section-container">
             <h2>Egresos</h2>
             <form id="form-egresos">
                 <label for="monto-egreso">Monto:</label>
-                <input type="number" id="monto-egreso" name="monto-egreso" placeholder="Ingrese el monto" required><br><br>
+                <input type="number" id="monto-egreso" name="monto-egreso" required>
                 <label for="categoria-egreso">Categoría:</label>
-                <input type="text" id="categoria-egreso" name="categoria-egreso" placeholder="Ingrese la categoría" required><br><br>
-                <button type="submit" class="btn-animado">Agregar Egreso</button>
+                <input type="text" id="categoria-egreso" name="categoria-egreso" required>
+                <button type="submit">Agregar Egreso</button>
             </form>
-            <ul id="lista-egresos" class="lista-animada"></ul>
         </section>
 
-        <section id="reportes" class="interactive-section fade-in">
+        <section id="reportes" class="section-container">
             <h2>Reportes Financieros</h2>
             <p>Visualiza el estado de tus finanzas con gráficos interactivos.</p>
             <canvas id="grafico-reportes"></canvas>
@@ -92,7 +157,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Universidad de Nariño - Todos los derechos reservados</p>
+        <p>&copy; 2025 SmartFinances - Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
