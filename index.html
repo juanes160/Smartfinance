@@ -29,47 +29,43 @@
     </nav>
 
     <main>
-        <section id="inicio">
+        <section id="inicio" class="animated-section">
             <h2>Bienvenido</h2>
-            <p>Tu organizador digital de gastos personales</p>
-            <!-- Contenedor para imágenes con estilo Flexbox -->
-            <div style="display: flex; gap: 10px;">
-                <img src="imagenes/estudiantes.png" alt="Estudiantes de la Universidad de Nariño" width="300">
-                <img src="imagenes/docentes.jpeg" alt="Docentes de la Universidad de Nariño" width="300">
+            <p>Gestiona tus ingresos y gastos fácilmente con SmartFinance.</p>
+            <div class="imagenes-container">
+                <img src="imagenes/ingresos.png" alt="Registro de Ingresos" class="fade-in">
+                <img src="imagenes/egresos.png" alt="Registro de Egresos" class="fade-in">
             </div>
         </section>
 
-        <section id="estudiantes">
-            <h2>Estudiantes</h2>
-            <p>Información sobre inscripciones, horarios y cursos.</p>
-            <!-- Enlace a más información externa -->
-            <a href="https://www.udenar.edu.co/estudiante/" target="_blank">Más información sobre inscripciones</a>
+        <section id="ingresos" class="interactive-section slide-in">
+            <h2>Ingresos</h2>
+            <form id="form-ingresos">
+                <label for="monto-ingreso">Monto:</label>
+                <input type="number" id="monto-ingreso" name="monto-ingreso" placeholder="Ingrese el monto" required=""><br><br>
+                <label for="categoria-ingreso">Categoría:</label>
+                <input type="text" id="categoria-ingreso" name="categoria-ingreso" placeholder="Ingrese la categoría" required=""><br><br>
+                <button type="submit" class="btn-animado">Agregar Ingreso</button>
+            </form>
+            <ul id="lista-ingresos" class="lista-animada"></ul>
         </section>
 
-        <section id="docentes">
-            <h2>Docentes</h2>
-            <p>Datos sobre asignaturas, horarios y noticias académicas.</p>
-            <a href="https://www.udenar.edu.co/docentes/" target="_blank">Más información sobre gestión docente</a>
-            <div>
-                <h3>Gestión de Docentes</h3>
-                <!-- Formulario para ingresar datos de docentes -->   
-                <form>
-                    <label for="nombre-docente">Nombre del Docente:</label>
-                    <input type="text" id="nombre-docente" name="nombre-docente" placeholder="Ingrese el nombre"><br><br>
-                    <label for="materia-docente">Materia:</label>
-                    <input type="text" id="materia-docente" name="materia-docente" placeholder="Ingrese la materia"><br><br>
-                    <button type="button">Agregar Docente</button>
-                    <button type="button">Actualizar Docente</button>
-                    <button type="button">Eliminar Docente</button>
-                </form>
-            </div>
+        <section id="egresos" class="interactive-section slide-in">
+            <h2>Egresos</h2>
+            <form id="form-egresos">
+                <label for="monto-egreso">Monto:</label>
+                <input type="number" id="monto-egreso" name="monto-egreso" placeholder="Ingrese el monto" required=""><br><br>
+                <label for="categoria-egreso">Categoría:</label>
+                <input type="text" id="categoria-egreso" name="categoria-egreso" placeholder="Ingrese la categoría" required=""><br><br>
+                <button type="submit" class="btn-animado">Agregar Egreso</button>
+            </form>
+            <ul id="lista-egresos" class="lista-animada"></ul>
         </section>
 
-        <section id="video">
-            <h2>Conoce Nuestra Universidad</h2>
-            <p>Descubre más sobre la Universidad de Nariño en el siguiente video:</p>
-            <!-- Incrustar video de YouTube -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/8gPP5SvC-98?si=aWoPfOv9_5N-KH5L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <section id="reportes" class="interactive-section fade-in">
+            <h2>Reportes Financieros</h2>
+            <p>Visualiza el estado de tus finanzas con gráficos interactivos.</p>
+            <canvas id="grafico-reportes"></canvas>
         </section>
     </main>
 
