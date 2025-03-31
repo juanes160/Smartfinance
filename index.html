@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración de caracteres y responsividad -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la Página -->
+    <title>Gestión Universidad de Nariño</title>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <!-- Agrega el logo de la universidad -->
+        <img src="Imagenes/Logo.png" alt="Logo Universidad de Nariño" width="100">
+        <!-- Título principal -->
+        <h1>Universidad de Nariño</h1>
+        <!-- Breve descripción -->
+        <p>Gestión de Estudiantes y Docentes</p>
+    </header>
+
+    <!-- Menú de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#estudiantes">Estudiantes</a></li>
+            <li><a href="#docentes">Docentes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Plataforma para la gestión de estudiantes y docentes.</p>
+            <!-- Contenedor para imágenes con estilo Flexbox -->
+            <div style="display: flex; gap: 10px;">
+                <img src="imagenes/estudiantes.png" alt="Estudiantes de la Universidad de Nariño" width="300">
+                <img src="imagenes/docentes.jpeg" alt="Docentes de la Universidad de Nariño" width="300">
+            </div>
+        </section>
+
+        <section id="estudiantes">
+            <h2>Estudiantes</h2>
+            <p>Información sobre inscripciones, horarios y cursos.</p>
+            <!-- Enlace a más información externa -->
+            <a href="https://www.udenar.edu.co/estudiante/" target="_blank">Más información sobre inscripciones</a>
+        </section>
+
+        <section id="docentes">
+            <h2>Docentes</h2>
+            <p>Datos sobre asignaturas, horarios y noticias académicas.</p>
+            <a href="https://www.udenar.edu.co/docentes/" target="_blank">Más información sobre gestión docente</a>
+            <div>
+                <h3>Gestión de Docentes</h3>
+                <!-- Formulario para ingresar datos de docentes -->   
+                <form>
+                    <label for="nombre-docente">Nombre del Docente:</label>
+                    <input type="text" id="nombre-docente" name="nombre-docente" placeholder="Ingrese el nombre"><br><br>
+                    <label for="materia-docente">Materia:</label>
+                    <input type="text" id="materia-docente" name="materia-docente" placeholder="Ingrese la materia"><br><br>
+                    <button type="button">Agregar Docente</button>
+                    <button type="button">Actualizar Docente</button>
+                    <button type="button">Eliminar Docente</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="video">
+            <h2>Conoce Nuestra Universidad</h2>
+            <p>Descubre más sobre la Universidad de Nariño en el siguiente video:</p>
+            <!-- Incrustar video de YouTube -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/8gPP5SvC-98?si=aWoPfOv9_5N-KH5L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2025 Universidad de Nariño - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
