@@ -3,161 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartFinances - Gestión Financiera</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #eef1f7;
-            color: #333;
-        }
-        header {
-            background: #004d99;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        header img {
-            width: 80px;
-            height: auto;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-            background: #00264d;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            padding: 10px;
-            display: inline-block;
-        }
-        nav ul li a:hover {
-            background: #003366;
-            border-radius: 5px;
-        }
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .section-container {
-            margin-bottom: 20px;
-            padding: 20px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        }
-        input, button {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background: #004d99;
-            color: white;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover {
-            background: #003366;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #00264d;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
-    <script>
-        function registrarUsuario() {
-            var usuario = document.getElementById("usuario").value;
-            var contraseña = document.getElementById("contraseña").value;
-            if (usuario && contraseña) {
-                alert("Usuario registrado: " + usuario);
-            } else {
-                alert("Por favor, complete todos los campos");
-            }
-        }
-    </script>
+    <title>Login y Registro</title>
+
+    <!-- Fuente Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-        <img src="Imagenes/Logo.jpeg" alt="Logo Universidad de Nariño">
-        <h1>SmartFinances</h1>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#registro">Registro</a></li>
-            <li><a href="#ingresos">Ingresos</a></li>
-            <li><a href="#egresos">Egresos</a></li>
-            <li><a href="#reportes">Reportes</a></li>
-        </ul>
-    </nav>
 
     <main>
-        <section id="registro" class="section-container">
-            <h2>Registrar Usuario</h2>
-            <form onsubmit="event.preventDefault(); registrarUsuario();">
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" required>
-                <button type="submit">Registrar</button>
-            </form>
-        </section>
+        <div class="contenedor__todo">
 
-        <section id="ingresos" class="section-container">
-            <h2>Ingresos</h2>
-            <form id="form-ingresos">
-                <label for="monto-ingreso">Monto:</label>
-                <input type="number" id="monto-ingreso" name="monto-ingreso" required>
-                <label for="categoria-ingreso">Categoría:</label>
-                <input type="text" id="categoria-ingreso" name="categoria-ingreso" required>
-                <button type="submit">Agregar Ingreso</button>
-            </form>
-        </section>
+            <!-- Caja trasera -->
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn__registrarse">Regístrarse</button>
+                </div>
+            </div>
 
-        <section id="egresos" class="section-container">
-            <h2>Egresos</h2>
-            <form id="form-egresos">
-                <label for="monto-egreso">Monto:</label>
-                <input type="number" id="monto-egreso" name="monto-egreso" required>
-                <label for="categoria-egreso">Categoría:</label>
-                <input type="text" id="categoria-egreso" name="categoria-egreso" required>
-                <button type="submit">Agregar Egreso</button>
-            </form>
-        </section>
+            <!-- Formularios -->
+            <div class="contenedor__login-register">
 
-        <section id="reportes" class="section-container">
-            <h2>Reportes Financieros</h2>
-            <p>Visualiza el estado de tus finanzas con gráficos interactivos.</p>
-            <canvas id="grafico-reportes"></canvas>
-        </section>
+                <!-- Formulario Login -->
+                <form action="login.php" method="POST" class="formulario__login">
+                    <h2>Iniciar Sesión</h2>
+                    <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <!-- Formulario Registro -->
+                <form action="registro.php" method="POST" class="formulario__register">
+                    <h2>Regístrarse</h2>
+                    <input type="text" name="nombre_completo" placeholder="Nombre completo" required>
+                    <input type="email" name="correo" placeholder="Correo Electrónico" required>
+                    <input type="text" name="usuario" placeholder="Usuario" required>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    <button type="submit">Regístrarse</button>
+                </form>
+
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 SmartFinances - Todos los derechos reservados</p>
-    </footer>
+    <!-- Script de cambio entre formularios -->
+    <script src="script.js"></script>
+
 </body>
 </html>
