@@ -6,17 +6,17 @@ include 'conexion.php';
 $nombre_completo = $_POST['nombre_completo'];
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
-$contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
+$contraseña = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
 
 // Preparar la consulta con sentencias preparadas y nombres escapados con backticks
-$stmt = $conexion->prepare("INSERT INTO usuarios (`nombre_completo`, `correo`, `usuario`, `contraseña`) VALUES (?, ?, ?, ?)");
+$stmt = $conexion->prepare("INSERT INTO usuarios (`nombre_completo`, `correo`, `usuario`, `contrasena`) VALUES (?, ?, ?, ?)");
 
 if ($stmt === false) {
     die("Error en la preparación de la consulta: " . $conexion->error);
 }
 
 // Vincular parámetros
-$stmt->bind_param("ssss", $nombre_completo, $correo, $usuario, $contraseña);
+$stmt->bind_param("ssss", $nombre_completo, $correo, $usuario, $contrasena);
 
 // Ejecutar la consulta
 if ($stmt->execute()) {
