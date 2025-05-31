@@ -10,11 +10,11 @@ if ($conexion->connect_error) {
 $nombre_completo = $_POST['nombre_completo'];
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
-$contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
+$contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
 
 // Insertar datos
-$sql = "INSERT INTO usuarios (nombre_completo, correo, usuario, contraseña)
-        VALUES ('$nombre_completo', '$correo', '$usuario', '$contraseña')";
+$sql = "INSERT INTO usuarios (nombre_completo, correo, usuario, contrasena)
+        VALUES ('$nombre_completo', '$correo', '$usuario', '$contrasena')";
 
 if ($conexion->query($sql) === TRUE) {
     echo "<script>
